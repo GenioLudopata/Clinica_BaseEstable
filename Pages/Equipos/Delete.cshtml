@@ -1,0 +1,23 @@
+@page "{id:int}"
+@model Clinica.Pages.Equipos.DeleteModel
+@{
+    ViewData["Title"] = "Eliminar Equipo";
+}
+
+<div class="container mt-4 animate__animated animate__fadeIn">
+    <h2 class="mb-3 text-danger">¿Deseas eliminar este equipo?</h2>
+    <div class="card border-danger mb-3">
+        <div class="card-body">
+            <h5 class="card-title">@Model.Equipo.Nombre</h5>
+            <p class="card-text">
+                <strong>Marca:</strong> @Model.Equipo.Marca<br />
+                <strong>Modelo:</strong> @Model.Equipo.Modelo<br />
+                <strong>Descripción:</strong> @Model.Equipo.Descripcion
+            </p>
+            <form method="post">
+                <button type="submit" class="btn btn-danger rounded-pill">Sí, eliminar</button>
+                <a href="/Equipos" class="btn btn-secondary ms-2 rounded-pill">Cancelar</a>
+            </form>
+        </div>
+    </div>
+</div>

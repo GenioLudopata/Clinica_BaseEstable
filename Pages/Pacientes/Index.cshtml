@@ -1,0 +1,34 @@
+@page
+@model Clinica.Pages.Pacientes.IndexModel
+@{
+    ViewData["Title"] = "Pacientes Registrados";
+}
+
+<div class="container mt-4">
+    <h2 class="mb-4 animate__animated animate__fadeInDown">Pacientes Registrados</h2>
+
+    <a href="/Pacientes/Create" class="btn btn-primary mb-3 shadow rounded-pill animate__animated animate__fadeInLeft">Registrar Paciente</a>
+
+    <div class="row">
+        @foreach (var paciente in Model.ListaPacientes)
+        {
+            <div class="col-md-6 col-lg-4 mb-4 animate__animated animate__fadeInUp">
+                <div class="card shadow-sm h-100">
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold">@paciente.Nombre</h5>
+                        <p class="card-text">
+                            <strong>Fecha de nacimiento:</strong> @paciente.FechaNacimiento.ToShortDateString()<br />
+                            <strong>Dirección:</strong> @paciente.Direccion<br />
+                            <strong>Teléfono:</strong> @paciente.Telefono
+                        </p>
+                        <div class="d-flex justify-content-between">
+                            <a href="/Pacientes/Details/@paciente.Id" class="btn btn-info btn-sm text-white rounded-pill">Ver</a>
+                            <a href="/Pacientes/Edit/@paciente.Id" class="btn btn-warning btn-sm text-dark rounded-pill">Editar</a>
+                            <a href="/Pacientes/Delete/@paciente.Id" class="btn btn-danger btn-sm text-white rounded-pill">Eliminar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>

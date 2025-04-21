@@ -1,0 +1,30 @@
+@page
+@model Clinica.Pages.Recetas.CreateModel
+@{
+    ViewData["Title"] = "Registrar Receta";
+}
+
+<div class="container mt-4 animate__animated animate__fadeIn">
+    <h2 class="mb-3">Registrar Receta</h2>
+    <form method="post">
+        <div class="mb-3">
+            <label asp-for="NuevaReceta.Medicamento" class="form-label"></label>
+            <input asp-for="NuevaReceta.Medicamento" class="form-control" />
+        </div>
+        <div class="mb-3">
+            <label asp-for="NuevaReceta.Fecha" class="form-label"></label>
+            <input asp-for="NuevaReceta.Fecha" type="date" class="form-control" />
+        </div>
+        <div class="mb-3">
+            <label asp-for="NuevaReceta.Descripcion" class="form-label"></label>
+            <textarea asp-for="NuevaReceta.Descripcion" class="form-control"></textarea>
+        </div>
+        <div class="mb-3">
+            <label asp-for="NuevaReceta.DuracionDias" class="form-label"></label>
+            <input asp-for="NuevaReceta.DuracionDias" type="number" class="form-control" />
+        </div>
+
+        <button type="submit" class="btn btn-success rounded-pill">Guardar</button>
+        <a href="/Recetas" class="btn btn-secondary ms-2 rounded-pill">Cancelar</a>
+    </form>
+</div>

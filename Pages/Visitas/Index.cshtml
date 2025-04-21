@@ -1,0 +1,33 @@
+@page
+@model Clinica.Pages.Visitas.IndexModel
+@{
+    ViewData["Title"] = "Visitas";
+}
+
+<div class="container mt-4">
+    <h2 class="mb-4 animate__animated animate__fadeInDown">Visitas</h2>
+    <a href="/Visitas/Create" class="btn btn-primary mb-3 shadow rounded-pill animate__animated animate__fadeInLeft">Registrar Visita</a>
+
+    <div class="row">
+        @foreach (var visita in Model.ListaVisitas)
+        {
+            <div class="col-md-6 col-lg-4 mb-4 animate__animated animate__fadeInUp">
+                <div class="card shadow-sm h-100">
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold">@visita.Fecha.ToShortDateString() - @visita.Hora</h5>
+                        <p class="card-text">
+                            <strong>Duración:</strong> @visita.Duracion minutos<br />
+                            <strong>Notas:</strong> @visita.Notas
+                        </p>
+                        <div class="d-flex justify-content-between">
+                            <a href="/Visitas/Details/@visita.Id" class="btn btn-info btn-sm text-white rounded-pill">Ver</a>
+                            <a href="/Visitas/Edit/@visita.Id" class="btn btn-warning btn-sm text-dark rounded-pill">Editar</a>
+                            <a href="/Visitas/Delete/@visita.Id" class="btn btn-danger btn-sm text-white rounded-pill">Eliminar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+

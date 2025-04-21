@@ -1,0 +1,29 @@
+@page
+@model Clinica.Pages.Visitas.CreateModel
+@{
+    ViewData["Title"] = "Registrar Visita";
+}
+
+<div class="container mt-4 animate__animated animate__fadeIn">
+    <h2 class="mb-3">Registrar Visita</h2>
+    <form method="post">
+        <div class="mb-3">
+            <label asp-for="NuevaVisita.Fecha" class="form-label"></label>
+            <input asp-for="NuevaVisita.Fecha" type="date" class="form-control" />
+        </div>
+        <div class="mb-3">
+            <label asp-for="NuevaVisita.Hora" class="form-label"></label>
+            <input asp-for="NuevaVisita.Hora" class="form-control" />
+        </div>
+        <div class="mb-3">
+            <label asp-for="NuevaVisita.Duracion" class="form-label"></label>
+            <input asp-for="NuevaVisita.Duracion" type="number" class="form-control" />
+        </div>
+        <div class="mb-3">
+            <label asp-for="NuevaVisita.Notas" class="form-label"></label>
+            <textarea asp-for="NuevaVisita.Notas" class="form-control"></textarea>
+        </div>
+        <button type="submit" class="btn btn-success rounded-pill">Guardar</button>
+        <a href="/Visitas" class="btn btn-secondary ms-2 rounded-pill">Cancelar</a>
+    </form>
+</div>

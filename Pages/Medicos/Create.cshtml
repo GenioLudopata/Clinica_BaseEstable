@@ -1,0 +1,34 @@
+@page
+@model Clinica.Pages.Medicos.CreateModel
+@{
+    ViewData["Title"] = "Registrar Médico";
+}
+
+<div class="container mt-4 animate__animated animate__fadeIn">
+    <h2 class="mb-3">Registrar Médico</h2>
+
+    <form method="post">
+        <div class="mb-3">
+            <label asp-for="NuevoMedico.Nombre" class="form-label"></label>
+            <input asp-for="NuevoMedico.Nombre" class="form-control" />
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="NuevoMedico.Especialidad" class="form-label"></label>
+            <input asp-for="NuevoMedico.Especialidad" class="form-control" />
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="NuevoMedico.Telefono" class="form-label"></label>
+            <input asp-for="NuevoMedico.Telefono" class="form-control" />
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="NuevoMedico.Email" class="form-label"></label>
+            <input asp-for="NuevoMedico.Email" class="form-control" />
+        </div>
+
+        <button type="submit" class="btn btn-success rounded-pill">Guardar</button>
+        <a href="/Medicos" class="btn btn-secondary ms-2 rounded-pill">Cancelar</a>
+    </form>
+</div>

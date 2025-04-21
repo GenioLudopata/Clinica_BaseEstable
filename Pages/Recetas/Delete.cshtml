@@ -1,0 +1,23 @@
+@page "{id:int}"
+@model Clinica.Pages.Recetas.DeleteModel
+@{
+    ViewData["Title"] = "Eliminar Receta";
+}
+
+<div class="container mt-4 animate__animated animate__fadeIn">
+    <h2 class="mb-3 text-danger">¿Deseas eliminar esta receta?</h2>
+    <div class="card border-danger mb-3">
+        <div class="card-body">
+            <h5 class="card-title">@Model.Receta.Medicamento</h5>
+            <p class="card-text">
+                <strong>Fecha:</strong> @Model.Receta.Fecha.ToShortDateString()<br />
+                <strong>Duración:</strong> @Model.Receta.DuracionDias días<br />
+                <strong>Descripción:</strong> @Model.Receta.Descripcion
+            </p>
+            <form method="post">
+                <button type="submit" class="btn btn-danger rounded-pill">Sí, eliminar</button>
+                <a href="/Recetas" class="btn btn-secondary ms-2 rounded-pill">Cancelar</a>
+            </form>
+        </div>
+    </div>
+</div>

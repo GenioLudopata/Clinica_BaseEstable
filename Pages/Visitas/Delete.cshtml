@@ -1,0 +1,22 @@
+@page "{id:int}"
+@model Clinica.Pages.Visitas.DeleteModel
+@{
+    ViewData["Title"] = "Eliminar Visita";
+}
+
+<div class="container mt-4 animate__animated animate__fadeIn">
+    <h2 class="mb-3 text-danger">¿Deseas eliminar esta visita?</h2>
+    <div class="card border-danger mb-3">
+        <div class="card-body">
+            <h5 class="card-title">@Model.Visita.Fecha.ToShortDateString() - @Model.Visita.Hora</h5>
+            <p class="card-text">
+                <strong>Duración:</strong> @Model.Visita.Duracion minutos<br />
+                <strong>Notas:</strong> @Model.Visita.Notas
+            </p>
+            <form method="post">
+                <button type="submit" class="btn btn-danger rounded-pill">Sí, eliminar</button>
+                <a href="/Visitas" class="btn btn-secondary ms-2 rounded-pill">Cancelar</a>
+            </form>
+        </div>
+    </div>
+</div>

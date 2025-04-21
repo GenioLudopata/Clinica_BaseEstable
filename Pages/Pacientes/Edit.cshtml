@@ -1,0 +1,37 @@
+@page "{id:int}"
+@model Clinica.Pages.Pacientes.EditModel
+@{
+    ViewData["Title"] = "Editar Paciente";
+}
+
+<div class="container mt-4 animate__animated animate__fadeIn">
+    <h2 class="mb-3">Editar Paciente</h2>
+
+    <form method="post">
+        <input type="hidden" asp-for="PacienteEditado.Id" />
+
+        <div class="mb-3">
+            <label asp-for="PacienteEditado.Nombre" class="form-label"></label>
+            <input asp-for="PacienteEditado.Nombre" class="form-control" />
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="PacienteEditado.FechaNacimiento" class="form-label"></label>
+            <input asp-for="PacienteEditado.FechaNacimiento" type="date" class="form-control" />
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="PacienteEditado.Direccion" class="form-label"></label>
+            <input asp-for="PacienteEditado.Direccion" class="form-control" />
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="PacienteEditado.Telefono" class="form-label"></label>
+            <input asp-for="PacienteEditado.Telefono" class="form-control" />
+        </div>
+
+        <button type="submit" class="btn btn-primary rounded-pill">Guardar Cambios</button>
+        <a href="/Pacientes" class="btn btn-secondary ms-2 rounded-pill">Cancelar</a>
+    </form>
+</div>
+

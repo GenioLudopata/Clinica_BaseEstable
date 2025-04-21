@@ -1,0 +1,35 @@
+@page
+@model Clinica.Pages.Terapeutas.IndexModel
+@{
+    ViewData["Title"] = "Terapeutas Registrados";
+}
+
+<div class="container mt-4">
+    <h2 class="mb-4 animate__animated animate__fadeInDown">Terapeutas Registrados</h2>
+
+    <a href="/Terapeutas/Create" class="btn btn-primary mb-3 shadow rounded-pill animate__animated animate__fadeInLeft">Registrar Terapeuta</a>
+
+    <div class="row">
+        @foreach (var terapeuta in Model.ListaTerapeutas)
+        {
+            <div class="col-md-6 col-lg-4 mb-4 animate__animated animate__fadeInUp">
+                <div class="card shadow-sm h-100">
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold">@terapeuta.Nombre</h5>
+                        <p class="card-text">
+                            <strong>Honorarios:</strong> $@terapeuta.Honorarios<br />
+                            <strong>Teléfono:</strong> @terapeuta.Telefono<br />
+                            <strong>Email:</strong> @terapeuta.Email<br />
+                            <strong>Licencia:</strong> @terapeuta.Licencia
+                        </p>
+                        <div class="d-flex justify-content-between">
+                            <a href="/Terapeutas/Details/@terapeuta.Id" class="btn btn-info btn-sm text-white rounded-pill">Ver</a>
+                            <a href="/Terapeutas/Edit/@terapeuta.Id" class="btn btn-warning btn-sm text-dark rounded-pill">Editar</a>
+                            <a href="/Terapeutas/Delete/@terapeuta.Id" class="btn btn-danger btn-sm text-white rounded-pill">Eliminar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>

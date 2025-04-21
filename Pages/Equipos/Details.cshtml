@@ -1,0 +1,20 @@
+@page "{id:int}"
+@model Clinica.Pages.Equipos.DetailsModel
+@{
+    ViewData["Title"] = "Detalle del Equipo";
+}
+
+<div class="container mt-4 animate__animated animate__fadeIn">
+    <h2 class="mb-3">Detalle del Equipo</h2>
+    <div class="card shadow-sm">
+        <div class="card-body">
+            <h5 class="card-title">@Model.Equipo.Nombre</h5>
+            <p class="card-text">
+                <strong>Marca:</strong> @Model.Equipo.Marca<br />
+                <strong>Modelo:</strong> @Model.Equipo.Modelo<br />
+                <strong>Descripción:</strong> @Model.Equipo.Descripcion
+            </p>
+            <a href="/Equipos" class="btn btn-secondary rounded-pill">Regresar</a>
+        </div>
+    </div>
+</div>

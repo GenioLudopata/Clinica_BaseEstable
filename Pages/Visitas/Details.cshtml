@@ -1,0 +1,19 @@
+@page "{id:int}"
+@model Clinica.Pages.Visitas.DetailsModel
+@{
+    ViewData["Title"] = "Detalle de la Visita";
+}
+
+<div class="container mt-4 animate__animated animate__fadeIn">
+    <h2 class="mb-3">Detalle de la Visita</h2>
+    <div class="card shadow-sm">
+        <div class="card-body">
+            <h5 class="card-title">@Model.Visita.Fecha.ToShortDateString() - @Model.Visita.Hora</h5>
+            <p class="card-text">
+                <strong>Duración:</strong> @Model.Visita.Duracion minutos<br />
+                <strong>Notas:</strong> @Model.Visita.Notas
+            </p>
+            <a href="/Visitas" class="btn btn-secondary rounded-pill">Regresar</a>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,42 @@
+@page
+@model Clinica.Pages.Terapeutas.CreateModel
+@{
+    ViewData["Title"] = "Registrar Terapeuta";
+}
+
+<div class="container mt-4 animate__animated animate__fadeIn">
+    <h2 class="mb-3">Registrar Terapeuta</h2>
+
+    <form method="post">
+        <div class="mb-3">
+            <label asp-for="NuevoTerapeuta.Nombre" class="form-label"></label>
+            <input asp-for="NuevoTerapeuta.Nombre" class="form-control" />
+        </div>
+        <div class="mb-3">
+            <label asp-for="NuevoTerapeuta.Honorarios" class="form-label"></label>
+            <input asp-for="NuevoTerapeuta.Honorarios" class="form-control" />
+        </div>
+        <div class="mb-3">
+            <label asp-for="NuevoTerapeuta.Telefono" class="form-label"></label>
+            <input asp-for="NuevoTerapeuta.Telefono" class="form-control" />
+        </div>
+        <div class="mb-3">
+            <label asp-for="NuevoTerapeuta.Email" class="form-label"></label>
+            <input asp-for="NuevoTerapeuta.Email" class="form-control" />
+        </div>
+        <div class="mb-3">
+            <label asp-for="NuevoTerapeuta.Licencia" class="form-label"></label>
+            <input asp-for="NuevoTerapeuta.Licencia" class="form-control" />
+        </div>
+
+        <button type="submit" class="btn btn-success rounded-pill">Guardar</button>
+        <a href="/Terapeutas" class="btn btn-secondary ms-2 rounded-pill">Cancelar</a>
+    </form>
+</div>
+
+
+
+
+
+
+

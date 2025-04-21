@@ -1,0 +1,34 @@
+@page
+@model Clinica.Pages.Medicos.IndexModel
+@{
+    ViewData["Title"] = "Médicos Registrados";
+}
+
+<div class="container mt-4">
+    <h2 class="mb-4 animate__animated animate__fadeInDown">Médicos Registrados</h2>
+
+    <a href="/Medicos/Create" class="btn btn-primary mb-3 shadow rounded-pill animate__animated animate__fadeInLeft">Registrar Médico</a>
+
+    <div class="row">
+        @foreach (var medico in Model.ListaMedicos)
+        {
+            <div class="col-md-6 col-lg-4 mb-4 animate__animated animate__fadeInUp">
+                <div class="card shadow-sm h-100">
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold">@medico.Nombre</h5>
+                        <p class="card-text">
+                            <strong>Especialidad:</strong> @medico.Especialidad<br />
+                            <strong>Teléfono:</strong> @medico.Telefono<br />
+                            <strong>Email:</strong> @medico.Email
+                        </p>
+                        <div class="d-flex justify-content-between">
+                            <a href="/Medicos/Details/@medico.Id" class="btn btn-info btn-sm text-white rounded-pill">Ver</a>
+                            <a href="/Medicos/Edit/@medico.Id" class="btn btn-warning btn-sm text-dark rounded-pill">Editar</a>
+                            <a href="/Medicos/Delete/@medico.Id" class="btn btn-danger btn-sm text-white rounded-pill">Eliminar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>

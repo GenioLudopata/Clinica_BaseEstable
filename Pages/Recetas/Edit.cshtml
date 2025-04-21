@@ -1,0 +1,32 @@
+@page "{id:int}"
+@model Clinica.Pages.Recetas.EditModel
+@{
+    ViewData["Title"] = "Editar Receta";
+}
+
+<div class="container mt-4 animate__animated animate__fadeIn">
+    <h2 class="mb-3">Editar Receta</h2>
+    <form method="post">
+        <input type="hidden" asp-for="RecetaEditada.Id" />
+
+        <div class="mb-3">
+            <label asp-for="RecetaEditada.Medicamento" class="form-label"></label>
+            <input asp-for="RecetaEditada.Medicamento" class="form-control" />
+        </div>
+        <div class="mb-3">
+            <label asp-for="RecetaEditada.Fecha" class="form-label"></label>
+            <input asp-for="RecetaEditada.Fecha" type="date" class="form-control" />
+        </div>
+        <div class="mb-3">
+            <label asp-for="RecetaEditada.Descripcion" class="form-label"></label>
+            <textarea asp-for="RecetaEditada.Descripcion" class="form-control"></textarea>
+        </div>
+        <div class="mb-3">
+            <label asp-for="RecetaEditada.DuracionDias" class="form-label"></label>
+            <input asp-for="RecetaEditada.DuracionDias" type="number" class="form-control" />
+        </div>
+
+        <button type="submit" class="btn btn-primary rounded-pill">Guardar Cambios</button>
+        <a href="/Recetas" class="btn btn-secondary ms-2 rounded-pill">Cancelar</a>
+    </form>
+</div>

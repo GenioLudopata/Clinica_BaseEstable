@@ -1,0 +1,31 @@
+@page
+@model Clinica.Pages.Equipos.CreateModel
+@{
+    ViewData["Title"] = "Registrar Equipo";
+}
+
+<div class="container mt-4 animate__animated animate__fadeIn">
+    <h2 class="mb-3">Registrar Equipo</h2>
+    <form method="post">
+        <div class="mb-3">
+            <label asp-for="NuevoEquipo.Nombre" class="form-label"></label>
+            <input asp-for="NuevoEquipo.Nombre" class="form-control" />
+        </div>
+        <div class="mb-3">
+            <label asp-for="NuevoEquipo.Descripcion" class="form-label"></label>
+            <textarea asp-for="NuevoEquipo.Descripcion" class="form-control"></textarea>
+        </div>
+        <div class="mb-3">
+            <label asp-for="NuevoEquipo.Marca" class="form-label"></label>
+            <input asp-for="NuevoEquipo.Marca" class="form-control" />
+        </div>
+        <div class="mb-3">
+            <label asp-for="NuevoEquipo.Modelo" class="form-label"></label>
+            <input asp-for="NuevoEquipo.Modelo" class="form-control" />
+        </div>
+        <button type="submit" class="btn btn-success rounded-pill">Guardar</button>
+        <a href="/Equipos" class="btn btn-secondary ms-2 rounded-pill">Cancelar</a>
+    </form>
+</div>
+
+

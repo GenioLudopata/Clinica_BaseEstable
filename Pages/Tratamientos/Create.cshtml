@@ -1,0 +1,31 @@
+@page
+@model Clinica.Pages.Tratamientos.CreateModel
+@{
+    ViewData["Title"] = "Registrar Tratamiento";
+}
+
+<div class="container mt-4 animate__animated animate__fadeIn">
+    <h2 class="mb-3">Registrar Tratamiento</h2>
+    <form method="post">
+        <div class="mb-3">
+            <label asp-for="NuevoTratamiento.Nombre" class="form-label"></label>
+            <input asp-for="NuevoTratamiento.Nombre" class="form-control" />
+        </div>
+        <div class="mb-3">
+            <label asp-for="NuevoTratamiento.Tipo" class="form-label"></label>
+            <input asp-for="NuevoTratamiento.Tipo" class="form-control" />
+        </div>
+        <div class="mb-3">
+            <label asp-for="NuevoTratamiento.Descripcion" class="form-label"></label>
+            <textarea asp-for="NuevoTratamiento.Descripcion" class="form-control"></textarea>
+        </div>
+        <div class="mb-3">
+            <label asp-for="NuevoTratamiento.Costo" class="form-label"></label>
+            <input asp-for="NuevoTratamiento.Costo" class="form-control" />
+        </div>
+
+        <button type="submit" class="btn btn-success rounded-pill">Guardar</button>
+        <a href="/Tratamientos" class="btn btn-secondary ms-2 rounded-pill">Cancelar</a>
+    </form>
+</div>
+
