@@ -1,48 +1,310 @@
-/* Please see documentation at https://learn.microsoft.com/aspnet/core/client-side/bundling-and-minification
-for details on configuring this project to bundle and minify static web assets. */
+/* Variables globales de colores */
+:root[b-w9n8g0q6va] {
+  --primary: #2C7DA0;
+  --secondary: #61B292;
+  --light: #F5F7FA;
+  --dark: #333333;
+  --accent: #A5D8FF;
+  --primary-dark: #235D76;
+  --secondary-dark: #4E9B7A;
+  --light-border: #e5e5e5;
+  --box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
 
+/* Estilos para la marca/logo */
 a.navbar-brand[b-w9n8g0q6va] {
   white-space: normal;
   text-align: center;
-  word-break: break-all;
+  font-weight: 600;
+  font-size: 1.5rem;
+  color: white !important;
+  transition: all 0.3s ease;
 }
 
+a.navbar-brand:hover[b-w9n8g0q6va] {
+  transform: scale(1.05);
+}
+
+/* Enlaces generales */
 a[b-w9n8g0q6va] {
-  color: #0077cc;
+  color: var(--primary);
+  transition: color 0.3s ease;
 }
 
+a:hover[b-w9n8g0q6va] {
+  color: var(--primary-dark);
+  text-decoration: none;
+}
+
+/* Botones primarios */
 .btn-primary[b-w9n8g0q6va] {
   color: #fff;
-  background-color: #1b6ec2;
-  border-color: #1861ac;
+  background-color: var(--primary);
+  border-color: var(--primary);
+  transition: all 0.3s ease;
+  border-radius: 5px;
+  padding: 0.5rem 1.25rem;
 }
 
+.btn-primary:hover[b-w9n8g0q6va], .btn-primary:focus[b-w9n8g0q6va] {
+  background-color: var(--primary-dark);
+  border-color: var(--primary-dark);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+/* Botones secundarios */
+.btn-secondary[b-w9n8g0q6va] {
+  color: #fff;
+  background-color: var(--secondary);
+  border-color: var(--secondary);
+  transition: all 0.3s ease;
+  border-radius: 5px;
+  padding: 0.5rem 1.25rem;
+}
+
+.btn-secondary:hover[b-w9n8g0q6va], .btn-secondary:focus[b-w9n8g0q6va] {
+  background-color: var(--secondary-dark);
+  border-color: var(--secondary-dark);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+/* Enlaces de navegación activos */
 .nav-pills .nav-link.active[b-w9n8g0q6va], .nav-pills .show > .nav-link[b-w9n8g0q6va] {
   color: #fff;
-  background-color: #1b6ec2;
-  border-color: #1861ac;
+  background-color: var(--primary);
+  border-color: var(--primary-dark);
 }
 
+/* Bordes */
 .border-top[b-w9n8g0q6va] {
-  border-top: 1px solid #e5e5e5;
+  border-top: 1px solid var(--light-border);
 }
+
 .border-bottom[b-w9n8g0q6va] {
-  border-bottom: 1px solid #e5e5e5;
+  border-bottom: 1px solid var(--light-border);
 }
 
+/* Sombras */
 .box-shadow[b-w9n8g0q6va] {
-  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+  box-shadow: var(--box-shadow);
 }
 
+/* Botón de políticas */
 button.accept-policy[b-w9n8g0q6va] {
   font-size: 1rem;
   line-height: inherit;
+  background-color: var(--secondary);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  transition: all 0.3s ease;
 }
 
+button.accept-policy:hover[b-w9n8g0q6va] {
+  background-color: var(--secondary-dark);
+}
+
+/* Footer */
 .footer[b-w9n8g0q6va] {
-  position: absolute;
+  position: relative; /* Cambiado de absolute para evitar problemas con el contenido */
   bottom: 0;
   width: 100%;
-  white-space: nowrap;
-  line-height: 60px;
+  line-height: 1.5;
+  padding: 2rem 0;
+  background-color: var(--dark);
+  color: white;
+}
+
+/* Estilos para tarjetas */
+.card[b-w9n8g0q6va] {
+  border-radius: 10px;
+  overflow: hidden;
+  border: none;
+  box-shadow: var(--box-shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover[b-w9n8g0q6va] {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.card-header[b-w9n8g0q6va] {
+  background-color: var(--primary);
+  color: white;
+  padding: 1rem 1.5rem;
+  font-weight: 500;
+}
+
+.card-body[b-w9n8g0q6va] {
+  padding: 1.5rem;
+}
+
+/* Tablas */
+.table[b-w9n8g0q6va] {
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: var(--box-shadow);
+}
+
+.table thead[b-w9n8g0q6va] {
+  background-color: var(--primary);
+  color: white;
+}
+
+.table thead th[b-w9n8g0q6va] {
+  border-bottom: none;
+  padding: 1rem;
+  font-weight: 500;
+}
+
+.table tbody tr:hover[b-w9n8g0q6va] {
+  background-color: rgba(44, 125, 160, 0.05);
+}
+
+/* Formularios */
+.form-control[b-w9n8g0q6va] {
+  border-radius: 5px;
+  padding: 0.75rem 1rem;
+  border: 1px solid #ced4da;
+  transition: all 0.3s ease;
+}
+
+.form-control:focus[b-w9n8g0q6va] {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 0.2rem rgba(44, 125, 160, 0.25);
+}
+
+.form-label[b-w9n8g0q6va] {
+  font-weight: 500;
+  color: var(--dark);
+  margin-bottom: 0.5rem;
+}
+
+/* Cabeceras de página */
+.page-header[b-w9n8g0q6va] {
+  margin-bottom: 2rem;
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+.page-header h1[b-w9n8g0q6va], .page-header h2[b-w9n8g0q6va], .page-header h3[b-w9n8g0q6va] {
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.page-header[b-w9n8g0q6va]:after {
+  content: '';
+  position: absolute;
+  width: 100px;
+  height: 3px;
+  background: var(--secondary);
+  left: 0;
+  bottom: 0;
+}
+
+/* Badges personalizados */
+.badge-primary[b-w9n8g0q6va] {
+  background-color: var(--primary);
+  color: white;
+}
+
+.badge-secondary[b-w9n8g0q6va] {
+  background-color: var(--secondary);
+  color: white;
+}
+
+/* Estilos para el menú de navegación */
+.navbar[b-w9n8g0q6va] {
+  padding: 0.8rem 1rem;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.navbar-dark .navbar-nav .nav-link[b-w9n8g0q6va] {
+  color: rgba(255,255,255,0.85) !important;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.navbar-dark .navbar-nav .nav-link:hover[b-w9n8g0q6va] {
+  color: white !important;
+}
+
+.navbar-dark .navbar-nav .nav-link[b-w9n8g0q6va]:after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background: white;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  transition: width 0.3s ease;
+}
+
+.navbar-dark .navbar-nav .nav-link:hover[b-w9n8g0q6va]:after {
+  width: 70%;
+}
+
+/* Estilos responsive */
+@media (max-width: 992px) {
+  .navbar-nav[b-w9n8g0q6va] {
+      padding: 1rem 0;
+  }
+  
+  .navbar-dark .navbar-nav .nav-link[b-w9n8g0q6va]:after {
+      display: none;
+  }
+  
+  .navbar-dark .navbar-nav .nav-link[b-w9n8g0q6va] {
+      padding: 0.75rem 0;
+  }
+}
+
+/* Animaciones para alertas y notificaciones */
+.alert[b-w9n8g0q6va] {
+  border-radius: 8px;
+  border: none;
+  box-shadow: var(--box-shadow);
+  animation: slideIn-b-w9n8g0q6va 0.5s ease;
+}
+
+@keyframes slideIn-b-w9n8g0q6va {
+  from {
+      transform: translateY(-20px);
+      opacity: 0;
+  }
+  to {
+      transform: translateY(0);
+      opacity: 1;
+  }
+}
+
+/* Estilos para botones de acción */
+.btn-action[b-w9n8g0q6va] {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.btn-action:hover[b-w9n8g0q6va] {
+  transform: scale(1.1);
+}
+
+/* Iconos en botones */
+.btn i[b-w9n8g0q6va] {
+  margin-right: 5px;
+}
+
+.btn-icon-only i[b-w9n8g0q6va] {
+  margin-right: 0;
 }

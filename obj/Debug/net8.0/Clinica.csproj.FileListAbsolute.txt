@@ -158,3 +158,4 @@
 /Users/uriel/ProyectoABD/Clinica/bin/Debug/net8.0/runtimes/browser/lib/net8.0/System.Text.Encodings.Web.dll
 /Users/uriel/ProyectoABD/Clinica/obj/Debug/net8.0/Clinica.csproj.AssemblyReference.cache
 /Users/uriel/ProyectoABD/Clinica/obj/Debug/net8.0/Clinica.csproj.Up2Date
+/Users/uriel/ProyectoABD/Clinica/obj/Debug/net8.0/Clinica.sourcelink.json
