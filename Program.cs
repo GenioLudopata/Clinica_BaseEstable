@@ -26,6 +26,8 @@ app.UseRouting();
 
 app.UseAuthorization();
 
+app.MapGet("/", context => Task.Run(() => context.Response.Redirect("/Login")));
 app.MapRazorPages();
+
 
 app.Run();

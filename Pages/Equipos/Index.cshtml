@@ -1,30 +1,33 @@
 @page
 @model Clinica.Pages.Equipos.IndexModel
 @{
-    ViewData["Title"] = "Equipos";
+    ViewData["Title"] = "Equipos registrados";
 }
 
-<div class="container mt-4">
-    <h2 class="mb-4 animate__animated animate__fadeInDown">Equipos</h2>
-    <a href="/Equipos/Create" class="btn btn-primary mb-3 shadow rounded-pill animate__animated animate__fadeInLeft">Registrar Equipo</a>
+<div class="container mt-5 animate__animated animate__fadeIn">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2 class="fw-semibold text-dark">Equipos Registrados</h2>
 
-    <div class="row">
+        <div class="d-flex gap-2">
+            <a href="/Equipos/Create" class="btn btn-primary rounded-pill shadow-sm">
+                <i class="fas fa-plus me-2"></i> Registrar Equipo
+            </a>
+            <a href="/Equipos/Administrar" class="btn btn-outline-secondary rounded-pill shadow-sm">
+                <i class="fas fa-wrench me-2"></i> Editar o Eliminar
+            </a>
+        </div>
+    </div>
+
+    <div class="row g-4">
         @foreach (var equipo in Model.ListaEquipos)
         {
-            <div class="col-md-6 col-lg-4 mb-4 animate__animated animate__fadeInUp">
-                <div class="card shadow-sm h-100">
+            <div class="col-md-6 col-lg-4">
+                <div class="card custom-card shadow-sm border-0 h-100">
                     <div class="card-body">
                         <h5 class="card-title fw-bold">@equipo.Nombre</h5>
-                        <p class="card-text">
-                            <strong>Marca:</strong> @equipo.Marca<br />
-                            <strong>Modelo:</strong> @equipo.Modelo<br />
-                            <strong>Descripción:</strong> @equipo.Descripcion
-                        </p>
-                        <div class="d-flex justify-content-between">
-                            <a href="/Equipos/Details/@equipo.Id" class="btn btn-info btn-sm text-white rounded-pill">Ver</a>
-                            <a href="/Equipos/Edit/@equipo.Id" class="btn btn-warning btn-sm text-dark rounded-pill">Editar</a>
-                            <a href="/Equipos/Delete/@equipo.Id" class="btn btn-danger btn-sm text-white rounded-pill">Eliminar</a>
-                        </div>
+                        <p><strong>Descripción:</strong> @equipo.Descripcion</p>
+                        <p><strong>Marca:</strong> @equipo.Marca</p>
+                        <p><strong>Modelo:</strong> @equipo.Modelo</p>
                     </div>
                 </div>
             </div>

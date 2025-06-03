@@ -1,0 +1,40 @@
+@page
+@model Clinica.Pages.Equipos.AdministrarModel
+@{
+    ViewData["Title"] = "Administrar Equipos";
+}
+
+<div class="container mt-5 animate__animated animate__fadeIn">
+    <h2 class="fw-semibold text-dark mb-4">Administrar Equipos</h2>
+
+    <table class="table table-bordered table-hover shadow-sm">
+        <thead class="table-light">
+            <tr>
+                <th>Nombre</th>
+                <th>Descripción</th>
+                <th>Marca</th>
+                <th>Modelo</th>
+                <th class="text-center">Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+        @foreach (var equipo in Model.ListaEquipos)
+        {
+            <tr>
+                <td>@equipo.Nombre</td>
+                <td>@equipo.Descripcion</td>
+                <td>@equipo.Marca</td>
+                <td>@equipo.Modelo</td>
+                <td class="text-center">
+                    <a href="/Equipos/Edit/@equipo.Id" class="btn btn-sm btn-warning rounded-pill me-2">
+                        <i class="fas fa-edit"></i> Editar
+                    </a>
+                    <a href="/Equipos/Delete/@equipo.Id" class="btn btn-sm btn-danger rounded-pill">
+                        <i class="fas fa-trash-alt"></i> Eliminar
+                    </a>
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>
+</div>

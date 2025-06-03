@@ -1,0 +1,40 @@
+@page
+@model Clinica.Pages.Recetas.AdministrarModel
+@{
+    ViewData["Title"] = "Administrar Recetas";
+}
+
+<div class="container mt-5 animate__animated animate__fadeIn">
+    <h2 class="fw-semibold text-dark mb-4">Administrar Recetas</h2>
+
+    <table class="table table-bordered table-hover shadow-sm">
+        <thead class="table-light">
+            <tr>
+                <th>Fecha</th>
+                <th>Diagnóstico</th>
+                <th>Paciente</th>
+                <th>Médico</th>
+                <th class="text-center">Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+        @foreach (var receta in Model.ListaRecetas)
+        {
+            <tr>
+                <td>@receta.Fecha.ToShortDateString()</td>
+                <td>@receta.Descripcion</td>
+                <td>@receta.Paciente?.Nombre</td>
+                <td>@receta.Medico?.Nombre</td>
+                <td class="text-center">
+                    <a href="/Recetas/Edit/@receta.Id" class="btn btn-sm btn-warning rounded-pill me-2">
+                        <i class="fas fa-edit"></i> Editar
+                    </a>
+                    <a href="/Recetas/Delete/@receta.Id" class="btn btn-sm btn-danger rounded-pill">
+                        <i class="fas fa-trash-alt"></i> Eliminar
+                    </a>
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>
+</div>

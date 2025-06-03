@@ -4,28 +4,30 @@
     ViewData["Title"] = "Médicos Registrados";
 }
 
-<div class="container mt-4">
-    <h2 class="mb-4 animate__animated animate__fadeInDown">Médicos Registrados</h2>
+<div class="container mt-5 animate__animated animate__fadeIn">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2 class="fw-semibold text-dark">Médicos Registrados</h2>
 
-    <a href="/Medicos/Create" class="btn btn-primary mb-3 shadow rounded-pill animate__animated animate__fadeInLeft">Registrar Médico</a>
+        <div class="d-flex gap-2">
+            <a href="/Medicos/Create" class="btn btn-primary rounded-pill shadow-sm">
+                <i class="fas fa-user-md me-2"></i> Registrar Médico
+            </a>
+            <a href="/Medicos/Administrar" class="btn btn-outline-secondary rounded-pill shadow-sm">
+                <i class="fas fa-wrench me-2"></i> Editar o Eliminar
+            </a>
+        </div>
+    </div>
 
-    <div class="row">
+    <div class="row g-4">
         @foreach (var medico in Model.ListaMedicos)
         {
-            <div class="col-md-6 col-lg-4 mb-4 animate__animated animate__fadeInUp">
-                <div class="card shadow-sm h-100">
+            <div class="col-md-6 col-lg-4">
+                <div class="card custom-card shadow-sm border-0 h-100">
                     <div class="card-body">
                         <h5 class="card-title fw-bold">@medico.Nombre</h5>
-                        <p class="card-text">
-                            <strong>Especialidad:</strong> @medico.Especialidad<br />
-                            <strong>Teléfono:</strong> @medico.Telefono<br />
-                            <strong>Email:</strong> @medico.Email
-                        </p>
-                        <div class="d-flex justify-content-between">
-                            <a href="/Medicos/Details/@medico.Id" class="btn btn-info btn-sm text-white rounded-pill">Ver</a>
-                            <a href="/Medicos/Edit/@medico.Id" class="btn btn-warning btn-sm text-dark rounded-pill">Editar</a>
-                            <a href="/Medicos/Delete/@medico.Id" class="btn btn-danger btn-sm text-white rounded-pill">Eliminar</a>
-                        </div>
+                        <p><strong>Especialidad:</strong> @medico.Especialidad</p>
+                        <p><strong>Teléfono:</strong> @medico.Telefono</p>
+                        <p><strong>Email:</strong> @medico.Email</p>
                     </div>
                 </div>
             </div>

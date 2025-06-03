@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Clinica.Models;
+using System.Collections.Generic;
 
 namespace Clinica.Pages.Terapeutas
 {
@@ -9,20 +10,31 @@ namespace Clinica.Pages.Terapeutas
 
         public void OnGet()
         {
+            // Datos simulados para pruebas visuales
             ListaTerapeutas = new List<Terapeuta>
             {
-                new Terapeuta { Id = 1, Nombre = "Lic. Sánchez", Honorarios = 500, Telefono = "5551234567", Email = "sanchez@clinica.com", Licencia = "LIC123" },
-                new Terapeuta { Id = 2, Nombre = "Lic. Torres", Honorarios = 600, Telefono = "5559876543", Email = "torres@clinica.com", Licencia = "LIC456" }
+                new Terapeuta
+                {
+                    Id = 1,
+                    Nombre = "Andrea Moreno",
+                    Honorarios = 850.00m,
+                    Telefono = "555-432-1987",
+                    Email = "andrea.moreno@clinica.com",
+                    Licencia = "TER-10293"
+                },
+                new Terapeuta
+                {
+                    Id = 2,
+                    Nombre = "Luis Ramírez",
+                    Honorarios = 780.00m,
+                    Telefono = "555-867-3245",
+                    Email = "luis.ramirez@clinica.com",
+                    Licencia = "TER-20476"
+                }
             };
         }
     }
 }
-
-
-
-
-
-
 
 
 

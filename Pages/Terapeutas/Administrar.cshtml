@@ -1,0 +1,42 @@
+@page
+@model Clinica.Pages.Terapeutas.AdministrarModel
+@{
+    ViewData["Title"] = "Administrar Terapeutas";
+}
+
+<div class="container mt-5 animate__animated animate__fadeIn">
+    <h2 class="fw-semibold text-dark mb-4">Administrar Terapeutas</h2>
+
+    <table class="table table-bordered table-hover shadow-sm">
+        <thead class="table-light">
+            <tr>
+                <th>Nombre</th>
+                <th>Honorarios</th>
+                <th>Teléfono</th>
+                <th>Email</th>
+                <th>Licencia</th>
+                <th class="text-center">Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+        @foreach (var terapeuta in Model.ListaTerapeutas)
+        {
+            <tr>
+                <td>@terapeuta.Nombre</td>
+                <td>$@terapeuta.Honorarios</td>
+                <td>@terapeuta.Telefono</td>
+                <td>@terapeuta.Email</td>
+                <td>@terapeuta.Licencia</td>
+                <td class="text-center">
+                    <a href="/Terapeutas/Edit/@terapeuta.Id" class="btn btn-sm btn-warning rounded-pill me-2">
+                        <i class="fas fa-edit"></i> Editar
+                    </a>
+                    <a href="/Terapeutas/Delete/@terapeuta.Id" class="btn btn-sm btn-danger rounded-pill">
+                        <i class="fas fa-trash-alt"></i> Eliminar
+                    </a>
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>
+</div>

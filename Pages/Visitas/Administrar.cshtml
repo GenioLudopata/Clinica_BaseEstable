@@ -1,0 +1,44 @@
+@page
+@model Clinica.Pages.Visitas.AdministrarModel
+@{
+    ViewData["Title"] = "Administrar Visitas";
+}
+
+<div class="container mt-5 animate__animated animate__fadeIn">
+    <h2 class="fw-bold text-dark mb-4">Administrar Visitas</h2>
+
+    <table class="table table-hover shadow-sm border table-bordered">
+        <thead class="table-light">
+            <tr>
+                <th>Paciente</th>
+                <th>Fecha</th>
+                <th>Hora</th>
+                <th>Duración</th>
+                <th>Terapeuta</th>
+                <th>Tratamiento</th>
+                <th class="text-center">Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var visita in Model.ListaVisitas)
+            {
+                <tr>
+                    <td>@visita.Paciente?.Nombre</td>
+                    <td>@visita.Fecha.ToShortDateString()</td>
+                    <td>@visita.Hora.ToString(@"hh\:mm")</td>
+                    <td>@visita.Duracion min</td>
+                    <td>@visita.Terapeuta?.Nombre</td>
+                    <td>@visita.Tratamiento?.Nombre</td>
+                    <td class="text-center">
+                        <a href="/Visitas/Edit/@visita.Id" class="btn btn-warning btn-sm rounded-pill me-2">
+                            <i class="fas fa-edit"></i> Editar
+                        </a>
+                        <a href="/Visitas/Delete/@visita.Id" class="btn btn-danger btn-sm rounded-pill">
+                            <i class="fas fa-trash-alt"></i> Eliminar
+                        </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

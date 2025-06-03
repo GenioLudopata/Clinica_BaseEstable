@@ -4,27 +4,32 @@
     ViewData["Title"] = "Recetas";
 }
 
-<div class="container mt-4">
-    <h2 class="mb-4 animate__animated animate__fadeInDown">Recetas</h2>
-    <a href="/Recetas/Create" class="btn btn-primary mb-3 shadow rounded-pill animate__animated animate__fadeInLeft">Registrar Receta</a>
-
+<div class="container mt-5 animate__animated animate__fadeIn">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2 class="fw-semibold text-dark">Recetas Registradas</h2>
+        <div class="d-flex gap-2">
+             <a href="/Recetas/Create" class="btn btn-primary rounded-pill shadow-sm">
+                <i class="fas fa-user-md me-2"></i> Registrar Receta
+             </a>
+             <a href="/Recetas/Administrar" class="btn btn-outline-secondary rounded-pill shadow-sm">
+                <i class="fas fa-wrench me-2"></i> Editar o Eliminar
+             </a>
+        </div>
+    </div>
+    
     <div class="row">
         @foreach (var receta in Model.ListaRecetas)
         {
-            <div class="col-md-6 col-lg-4 mb-4 animate__animated animate__fadeInUp">
-                <div class="card shadow-sm h-100">
+            <div class="col-md-4 mb-4">
+                <div class="card shadow-sm border-0 rounded-3">
                     <div class="card-body">
-                        <h5 class="card-title fw-bold">@receta.Medicamento</h5>
+                        <h5 class="card-title">Receta ID: @receta.Id</h5>
                         <p class="card-text">
                             <strong>Fecha:</strong> @receta.Fecha.ToShortDateString()<br />
-                            <strong>Duración:</strong> @receta.DuracionDias días<br />
-                            <strong>Descripción:</strong> @receta.Descripcion
+                            <strong>Diagnóstico:</strong> @receta.Descripcion<br />
+                            <strong>Paciente:</strong> @receta.Paciente?.Nombre<br />
+                            <strong>Médico:</strong> @receta.Medico?.Nombre
                         </p>
-                        <div class="d-flex justify-content-between">
-                            <a href="/Recetas/Details/@receta.Id" class="btn btn-info btn-sm text-white rounded-pill">Ver</a>
-                            <a href="/Recetas/Edit/@receta.Id" class="btn btn-warning btn-sm text-dark rounded-pill">Editar</a>
-                            <a href="/Recetas/Delete/@receta.Id" class="btn btn-danger btn-sm text-white rounded-pill">Eliminar</a>
-                        </div>
                     </div>
                 </div>
             </div>

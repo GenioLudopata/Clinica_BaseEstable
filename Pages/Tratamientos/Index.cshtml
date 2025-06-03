@@ -4,27 +4,33 @@
     ViewData["Title"] = "Tratamientos";
 }
 
-<div class="container mt-4">
-    <h2 class="mb-4 animate__animated animate__fadeInDown">Tratamientos</h2>
-    <a href="/Tratamientos/Create" class="btn btn-primary mb-3 shadow rounded-pill animate__animated animate__fadeInLeft">Registrar Tratamiento</a>
+<div class="container mt-5 animate__animated animate__fadeIn">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2 class="fw-semibold text-dark">Tratamientos Registrados</h2>
+
+        <div class="d-flex gap-2">
+            <a href="/Tratamientos/Create" class="btn btn-primary rounded-pill shadow-sm">
+                <i class="fas fa-plus me-2"></i> Registrar Tratamiento
+            </a>
+            <a href="/Tratamientos/Administrar" class="btn btn-outline-secondary rounded-pill shadow-sm">
+                <i class="fas fa-wrench me-2"></i> Editar o Eliminar
+            </a>
+        </div>
+    </div>
 
     <div class="row">
         @foreach (var tratamiento in Model.ListaTratamientos)
         {
-            <div class="col-md-6 col-lg-4 mb-4 animate__animated animate__fadeInUp">
-                <div class="card shadow-sm h-100">
+            <div class="col-md-4 mb-4">
+                <div class="card shadow-sm border-0 rounded-3">
                     <div class="card-body">
-                        <h5 class="card-title fw-bold">@tratamiento.Nombre</h5>
+                        <h5 class="card-title">@tratamiento.Nombre</h5>
                         <p class="card-text">
                             <strong>Tipo:</strong> @tratamiento.Tipo<br />
                             <strong>Descripción:</strong> @tratamiento.Descripcion<br />
-                            <strong>Costo:</strong> $@tratamiento.Costo
+                            <strong>Costo:</strong> $@tratamiento.Costo<br />
+                            <strong>Equipo:</strong> @tratamiento.Equipo?.Nombre
                         </p>
-                        <div class="d-flex justify-content-between">
-                            <a href="/Tratamientos/Details/@tratamiento.Id" class="btn btn-info btn-sm text-white rounded-pill">Ver</a>
-                            <a href="/Tratamientos/Edit/@tratamiento.Id" class="btn btn-warning btn-sm text-dark rounded-pill">Editar</a>
-                            <a href="/Tratamientos/Delete/@tratamiento.Id" class="btn btn-danger btn-sm text-white rounded-pill">Eliminar</a>
-                        </div>
                     </div>
                 </div>
             </div>

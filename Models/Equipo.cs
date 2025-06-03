@@ -1,3 +1,6 @@
+using System.Collections.Generic;
+using Clinica.Models;
+
 namespace Clinica.Models
 {
     public class Equipo

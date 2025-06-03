@@ -1,32 +1,35 @@
 @page
 @model Clinica.Pages.Terapeutas.IndexModel
 @{
-    ViewData["Title"] = "Terapeutas Registrados";
+    ViewData["Title"] = "Terapeutas";
 }
 
-<div class="container mt-4">
-    <h2 class="mb-4 animate__animated animate__fadeInDown">Terapeutas Registrados</h2>
-
-    <a href="/Terapeutas/Create" class="btn btn-primary mb-3 shadow rounded-pill animate__animated animate__fadeInLeft">Registrar Terapeuta</a>
+<div class="container mt-5 animate__animated animate__fadeIn">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2 class="fw-semibold text-dark">Terapeutas Registrados</h2>
+        <div class="d-flex gap-2">
+             <a href="/Terapeutas/Create" class="btn btn-primary rounded-pill shadow-sm">
+                <i class="fas fa-user-md me-2"></i> Registrar Terapeuta
+             </a>
+             <a href="/Terapeutas/Administrar" class="btn btn-outline-secondary rounded-pill shadow-sm">
+                <i class="fas fa-wrench me-2"></i> Editar o Eliminar
+             </a>
+        </div>
+    </div>
 
     <div class="row">
         @foreach (var terapeuta in Model.ListaTerapeutas)
         {
-            <div class="col-md-6 col-lg-4 mb-4 animate__animated animate__fadeInUp">
-                <div class="card shadow-sm h-100">
+            <div class="col-md-4 mb-4">
+                <div class="card shadow-sm border-0 rounded-3">
                     <div class="card-body">
-                        <h5 class="card-title fw-bold">@terapeuta.Nombre</h5>
+                        <h5 class="card-title">@terapeuta.Nombre</h5>
                         <p class="card-text">
                             <strong>Honorarios:</strong> $@terapeuta.Honorarios<br />
                             <strong>Teléfono:</strong> @terapeuta.Telefono<br />
                             <strong>Email:</strong> @terapeuta.Email<br />
                             <strong>Licencia:</strong> @terapeuta.Licencia
                         </p>
-                        <div class="d-flex justify-content-between">
-                            <a href="/Terapeutas/Details/@terapeuta.Id" class="btn btn-info btn-sm text-white rounded-pill">Ver</a>
-                            <a href="/Terapeutas/Edit/@terapeuta.Id" class="btn btn-warning btn-sm text-dark rounded-pill">Editar</a>
-                            <a href="/Terapeutas/Delete/@terapeuta.Id" class="btn btn-danger btn-sm text-white rounded-pill">Eliminar</a>
-                        </div>
                     </div>
                 </div>
             </div>
