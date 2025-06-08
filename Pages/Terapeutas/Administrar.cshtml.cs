@@ -17,19 +17,19 @@ namespace Clinica.Pages.Terapeutas
                 {
                     Id = 1,
                     Nombre = "Fernanda Díaz",
-                    Honorarios = 900.00m,
                     Telefono = "555-123-4567",
                     Email = "fernanda.diaz@clinica.com",
-                    Licencia = "LIC-09876"
+                    Licencia = "LIC-09876",
+                    Honorarios = 900.00m
                 },
                 new Terapeuta
                 {
                     Id = 2,
                     Nombre = "Carlos Méndez",
-                    Honorarios = 850.00m,
                     Telefono = "555-765-4321",
                     Email = "carlos.mendez@clinica.com",
-                    Licencia = "LIC-04567"
+                    Licencia = "LIC-04567",
+                    Honorarios = 850.00m
                 }
             };
         }

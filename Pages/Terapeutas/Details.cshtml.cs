@@ -13,10 +13,10 @@ namespace Clinica.Pages.Terapeutas
             {
                 Id = id,
                 Nombre = "Lic. Ejemplo",
-                Honorarios = 650,
                 Telefono = "5554447788",
                 Email = "ejemplo@clinica.com",
-                Licencia = "LIC777"
+                Licencia = "LIC777",
+                Honorarios = 650
             };
         }
     }

@@ -14,7 +14,7 @@ namespace Clinica.Pages.Pacientes
             Paciente = new Paciente
             {
                 Id = id,
-                Nombre = "Paciente a eliminar",
+                Nombre = "juan",
                 FechaNacimiento = new DateTime(1985, 3, 10),
                 Direccion = "Dirección eliminable",
                 Telefono = "5558889999"
